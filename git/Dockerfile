@@ -1,6 +1,6 @@
-FROM  centos:latest
+FROM  ubuntu:latest
  MAINTAINER bikash9089@gmail.com
- RUN yum install -y httpd \
+ RUN apt install -y apache2 \
   zip\
   unzip
   ADD https://www.free-css.com/assets/files/free-css-templates/download/page265/shine.zip /var/www/html/
@@ -8,5 +8,5 @@ FROM  centos:latest
  RUN unzip shine.zip
  RUN cp -rvf shine/* .
  RUN rm -rf shine shine.zip
- CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+ CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
  EXPOSE 80
