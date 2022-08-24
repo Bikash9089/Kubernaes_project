@@ -11,4 +11,4 @@ Run apt update -y
  RUN rm -rf shine shine.zip
  CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
  EXPOSE 80
-i
+
