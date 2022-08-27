@@ -1,0 +1,20 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+   name: bikash
+spec:
+   replicas: 2
+   selector:      # tells the controller which pods to watch/belong to
+    matchLabels:
+     app: bikash
+   template:
+      metadata:
+        labels:
+          app: bikash
+      spec:
+       containers:
+        - name: bikash
+          image: bikash9089/test
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 80
